@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}Джедаи
+{% endblock %}
+
+{% block body %}
+    <table>
+    <thead>
+    <tr><th>Имя</th><th>Кол-во падаванов в обучении</th></tr>
+    </thead>
+    <tbody>
+    {% for m in mentors %}
+        <tr>
+        <td><a href="{{ m.get_absolute_url }}">{{ m.username }}</a></td>
+        <td>{{ m.padawans_count }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

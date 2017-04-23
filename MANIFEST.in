@@ -1,0 +1,2 @@
+recursive-include hr/templates *
+include BUILD_NUMBER

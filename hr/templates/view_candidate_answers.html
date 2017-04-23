@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}Тест: {{ test.code }}
+{% endblock %}
+
+{% block body %}
+    {% if error %}<div style="color: #ff0000">{{ error }}</div>{% endif %}
+    {% for a in answers %}
+        {{ a.question.text }} -  {{ a.answer|yesno:"Да,Нет" }}<br>
+    {% endfor %}
+
+    <form method="post" action="">
+    {% csrf_token %}
+    <input type="submit" value="Зачислить падаваном">
+    </form>
+{% endblock %}

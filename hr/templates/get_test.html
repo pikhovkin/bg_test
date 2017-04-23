@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}Тест: {{ test.code }}
+{% endblock %}
+
+{% block body %}
+    <form method="post" action="">
+    {{ form.management_form }}
+    {% csrf_token %}
+    {% for f in form.forms %}
+        {{ f.id }}
+        {{ f.text }}
+        {{ f.answer.label }}
+        {{ f.answer }}<br>
+    {% endfor %}
+    <input type="submit" value="Далее">
+    </form>
+{% endblock %}

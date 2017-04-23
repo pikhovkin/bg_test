@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}{{ object.username }}
+{% endblock %}
+
+{% block body %}
+    {% for c in candidates %}
+        <a href="{% url 'view_jedi_padawan' object.pk c.pk %}">{{ c.username }}</a>
+    {% endfor %}
+{% endblock %}
