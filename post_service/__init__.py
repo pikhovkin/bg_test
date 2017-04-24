@@ -1,4 +1,6 @@
 # coding: utf-8
+import logging
+
 
 __all__ = (
     'Message',
@@ -6,6 +8,9 @@ __all__ = (
     'EMailService',
     'InterGalaxyService'
 )
+
+
+log = logging.getLogger('post_service')
 
 
 class Message(object):
@@ -24,7 +29,7 @@ class BasePostService(object):
 
 class EMailService(BasePostService):
     def send(self, message):
-        print message
+        log.info(message)
 
 
 class InterGalaxyService(BasePostService):
